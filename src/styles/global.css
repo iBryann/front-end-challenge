@@ -12,12 +12,29 @@ html {
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 10px;
+
+  --gray: #DDE3E9;
+  --white: #F2F2F2;
+  --green: #00C57C;
+  --purple: #663399;
+  --blue: #2F3676;
+  --blue-medium: #191847;
+  --blue-dark: #071723;
+  --red: #F33232;
+
+  --error: #F59393;
+  --disabled: #C5CFD6;
+  --disabled-text: #555555;
 }
 
 body {
-  color: #071723;
-  background-color: rebeccapurple;
+  color: var(--blue-dark);
+  background-color: var(--purple);;
 }

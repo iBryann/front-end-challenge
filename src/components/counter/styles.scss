@@ -1,0 +1,51 @@
+.counter {
+  display: flex;
+  gap: .8rem;
+
+  button {
+    border: none;
+    font-size: 0;
+    background-color: transparent;
+    cursor: pointer;
+
+    &:focus, &:focus-visible {
+      outline: 2px solid var(--purple);
+    }
+
+    svg {
+      path {
+        fill: var(--blue);
+        transition: .2s;
+
+        &:hover {
+          fill: var(--blue-medium);
+        }
+      }
+    }
+  }
+
+  input {
+    width: 60px;
+    padding: .9rem 1.1rem;
+    border: 1px solid var(--blue);
+    border-radius: 7px;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: var(--gray);
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+
+    &:focus, &:focus-visible {
+      outline: 2px solid var(--purple);
+    }
+  }
+}

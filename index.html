@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <main class="box">
+    <main id="app">
       <header class="header">
         <h1 class="title">
           Formulário<br />para compra de<br /><span>Pacote de Stickers</span>
@@ -19,36 +19,59 @@
 
       <form name="styckers" class="form">
         <fieldset class="fieldset">
-          <legend class="label">Quais stickers:</legend>
+          <legend class="legend">Quais stickers:</legend>
 
-          <label><input name="framework" type="checkbox" /> React</label>
-          <label><input name="framework" type="checkbox" /> Vue</label>
-          <label><input name="framework" type="checkbox" /> Angular</label>
+          <div class="checkbox-group">
+            <label class="checkbox" tabindex="0">
+              React
+              <input value="react" name="framework" type="checkbox" tabindex="-1" checked>
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkbox" tabindex="0" error>
+              Vue
+              <input value="vue" name="framework" type="checkbox" tabindex="-1">
+              <span class="checkmark"></span>
+            </label>
+
+            <label class="checkbox" tabindex="0" disabled>
+              Angular
+              <input value="angular" name="framework" type="checkbox" tabindex="-1" disabled>
+              <span class="checkmark"></span>
+            </label>
+          </div>
         </fieldset>
 
         <fieldset class="fieldset">
-          <legend class="label">Quantos stickers de cada?</legend>
+          <legend class="legend">Quantos stickers de cada?</legend>
 
           <div class="counter">
             <button type="button">
-              <img src="./src/assets/icons/sub.svg" alt="Subtrair">
+              <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.66667C0 2.09067 2.09067 0 4.66667 0H37.3333C39.9093 0 42 2.09067 42 4.66667V37.3333C42 39.9093 39.9093 42 37.3333 42H4.66667C2.09067 42 0 39.9093 0 37.3333V4.66667ZM9.33333 23.3333H32.6667V18.6667H9.33333V23.3333Z" fill="#2F3676"/>
+              </svg>
             </button>
 
-            <input name="quantity" type="number" step="1" min="0" max="1000" placeholder="1" />
+            <input name="quantity" type="number" step="1" min="0" max="999" placeholder="1" />
 
             <button type="button">
-              <img src="./src/assets/icons/add.svg" alt="Adicionar">
+              <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M37.3333 42H4.66667C2.09067 42 0 39.9093 0 37.3333V4.66667C0 2.09067 2.09067 0 4.66667 0H37.3333C39.9093 0 42 2.09067 42 4.66667V37.3333C42 39.9093 39.9093 42 37.3333 42ZM18.6667 18.6667H9.33333V23.3333H18.6667V32.6667H23.3333V23.3333H32.6667V18.6667H23.3333V9.33333H18.6667V18.6667Z" fill="#2F3676"/>
+              </svg>
             </button>
           </div>
         </fieldset>
 
         <fieldset class="fieldset">
-          <legend class="label">Observações:</legend>
+          <legend class="legend">Observações:</legend>
 
           <textarea name="descricao" placeholder="Alguma dúvida? Recado?"></textarea>
         </fieldset>
 
         <footer class="footer">
+          <p class="feedback">Formulário enviado com sucesso!</p>
+
+          <!-- <button type="submit" disabled>Enviar</button> -->
           <button type="submit">Enviar</button>
         </footer>
       </form>
