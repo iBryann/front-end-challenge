@@ -15,12 +15,12 @@
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.0.3",
+    "sass": "^1.69.4",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "lit": "^3.0.0",
     "reset-css": "^5.0.2",
-    "sass": "^1.69.4"
+    "zod": "^3.22.4"
   }
 }
