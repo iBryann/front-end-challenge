@@ -27,8 +27,6 @@ function handleSuccessSubmit(form: StyckersForm) {
   const overlay = document.querySelector('#loader-overlay')!;
 
   overlay.classList.add('show');
-
-  // No mundo real, essa parte estaria dentro dos then/catch/finally uma request
   setTimeout(() => form.reset(), 3000);
   setTimeout(() => overlay.classList.remove('show'), 7000);
 }
@@ -50,8 +48,9 @@ function handleSubmit(event: SubmitEvent) {
     // reseta todos os erros
 
     const formData = formSchema.parse(payload);
-    console.log(formData);
 
+    // No mundo real, essa parte estaria dentro dos then/catch/finally de uma request
+    console.log(formData);
     handleSuccessSubmit(form);
   }
   catch (error) {
