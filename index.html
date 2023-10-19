@@ -1,10 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>Teste Frontend VAGAS.com</title>
+    <title>VAGAS - Stickers</title>
+
+    <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Resgates seus adesivos do Vagas.com" />
+    <meta name="description" content="Resgate seus adesivos do maior evento do Vagas.com, maior site de empregos do Brasil." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bryann-challenge.netlify.app" />
+    <meta property="og:title" content="Resgates seus adesivos do Vagas.com" />
+    <meta property="og:description" content="Resgate seus adesivos do maior evento do Vagas.com, maior site de empregos do Brasil." />
+    <meta property="og:image" content="./public/logo-redes-sociais.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://bryann-challenge.netlify.app" />
+    <meta property="twitter:title" content="Resgates seus adesivos do Vagas.com" />
+    <meta property="twitter:description" content="Resgate seus adesivos do maior evento do Vagas.com, maior site de empregos do Brasil." />
+    <meta property="twitter:image" content="./public/logo-redes-sociais.png" />
 
     <link rel="stylesheet" href="./src/styles/global.css">
   </head>
@@ -35,10 +49,10 @@
               <span class="checkmark"></span>
             </label>
 
-            <!-- <label class="checkbox" role="button" tabindex="0" disabled> -->
             <label class="checkbox" role="button" tabindex="0">
               Angular
-              <input value="angular" name="framework" type="checkbox" tabindex="-1" disabled>
+              <!-- <input value="angular" name="framework" type="checkbox" tabindex="-1" disabled> -->
+              <input value="angular" name="framework" type="checkbox" tabindex="-1">
               <span class="checkmark"></span>
             </label>
           </div>
@@ -48,7 +62,7 @@
           <legend class="legend">Quantos stickers de cada?</legend>
 
           <div class="counter">
-            <button type="button">
+            <button type="button" aria-label="Decrementar">
               <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.66667C0 2.09067 2.09067 0 4.66667 0H37.3333C39.9093 0 42 2.09067 42 4.66667V37.3333C42 39.9093 39.9093 42 37.3333 42H4.66667C2.09067 42 0 39.9093 0 37.3333V4.66667ZM9.33333 23.3333H32.6667V18.6667H9.33333V23.3333Z" fill="#2F3676"/>
               </svg>
@@ -56,7 +70,7 @@
 
             <input name="quantity" type="number" value="1" step="1" min="0" max="999" placeholder="1" />
 
-            <button type="button">
+            <button type="button" aria-label="Incrementar">
               <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M37.3333 42H4.66667C2.09067 42 0 39.9093 0 37.3333V4.66667C0 2.09067 2.09067 0 4.66667 0H37.3333C39.9093 0 42 2.09067 42 4.66667V37.3333C42 39.9093 39.9093 42 37.3333 42ZM18.6667 18.6667H9.33333V23.3333H18.6667V32.6667H23.3333V23.3333H32.6667V18.6667H23.3333V9.33333H18.6667V18.6667Z" fill="#2F3676"/>
               </svg>
@@ -71,7 +85,7 @@
         </fieldset>
 
         <footer class="footer">
-          <!-- <p class="feedback">Formulário enviado com sucesso!</p> -->
+          <p class="feedback">Formulário enviado com sucesso!</p>
 
           <!-- <button type="submit" disabled>Enviar</button> -->
           <button type="submit">Enviar</button>
