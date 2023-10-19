@@ -1,6 +1,8 @@
 @import url(../../components/checkbox/styles.scss);
 @import url(../../components/textarea/styles.scss);
 
+$mobile: 600px;
+
 #app {
   position: relative;
   width: 100%;
@@ -10,6 +12,17 @@
   border-radius: 8px;
   box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
   overflow: hidden;
+
+  @media (max-width: $mobile) {
+    max-width: unset;
+    min-height: 100vh;
+    margin: 0;
+    border-radius: 0;
+
+    @media (max-height: 750px) {
+      min-height: calc(100vh + 100px);
+    }
+  }
 
   .header {
     height: 187px;
@@ -52,8 +65,16 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 32px;
+    padding: 3.2rem;
     background-color: var(--gray);
+
+    @media (max-width: $mobile) {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 2rem;
+      box-shadow: 0 -4px 10px 0 rgba(0, 0, 0, .2);
+    }
 
     .feedback {
       flex: 1;
