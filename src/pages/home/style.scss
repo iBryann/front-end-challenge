@@ -1,5 +1,4 @@
 @import url(../../components/checkbox/styles.scss);
-@import url(../../components/counter/styles.scss);
 @import url(../../components/textarea/styles.scss);
 
 #app {
@@ -82,7 +81,7 @@
       border: .2rem solid var(--disabled-text);
     }
 
-    &:focus, &:focus-visible {
+    &:focus-visible {
       outline: 2px solid var(--purple);
     }
 

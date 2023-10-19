@@ -17,7 +17,7 @@
         </h1>
       </header>
 
-      <form name="styckers" class="form">
+      <form id="styckers" name="styckers" class="form">
         <fieldset class="fieldset">
           <legend class="legend">Quais stickers:</legend>
 
@@ -28,13 +28,15 @@
               <span class="checkmark"></span>
             </label>
 
-            <label class="checkbox" role="button" tabindex="0" error>
+            <!-- <label class="checkbox" role="button" tabindex="0" error> -->
+            <label class="checkbox" role="button" tabindex="0">
               Vue
               <input value="vue" name="framework" type="checkbox" tabindex="-1">
               <span class="checkmark"></span>
             </label>
 
-            <label class="checkbox" role="button" tabindex="0" disabled>
+            <!-- <label class="checkbox" role="button" tabindex="0" disabled> -->
+            <label class="checkbox" role="button" tabindex="0">
               Angular
               <input value="angular" name="framework" type="checkbox" tabindex="-1" disabled>
               <span class="checkmark"></span>
@@ -52,7 +54,7 @@
               </svg>
             </button>
 
-            <input name="quantity" type="number" step="1" min="0" max="999" placeholder="1" />
+            <input name="quantity" type="number" value="1" step="1" min="0" max="999" placeholder="1" />
 
             <button type="button">
               <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,7 +67,7 @@
         <fieldset class="fieldset">
           <legend class="legend">Observações:</legend>
 
-          <textarea name="descricao" placeholder="Alguma dúvida? Recado?"></textarea>
+          <textarea name="description" placeholder="Alguma observação? :)"></textarea>
         </fieldset>
 
         <footer class="footer">
@@ -77,6 +79,6 @@
       </form>
     </main>
 
-    <script type="module" src="./src/pages/home/script.ts"></script>
+    <script type="module" src="./src/pages/home/index.ts"></script>
   </body>
 </html>
