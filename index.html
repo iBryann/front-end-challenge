@@ -25,6 +25,16 @@
 
   <body>
     <main id="app">
+      <div id="loader-overlay">
+        <div class="spinner">
+          <span class="loader"></span>
+        </div>
+
+        <div class="message">
+          Formulário enviado<br />com sucesso!
+        </div>
+      </div>
+
       <header class="header">
         <h1 class="title">
           Formulário<br />para compra de<br /><span>Pacote de Stickers</span>
@@ -32,13 +42,15 @@
       </header>
 
       <form id="styckers" name="styckers" class="form">
+
+
         <fieldset class="fieldset">
           <legend class="legend">Quais stickers:</legend>
 
           <div class="checkbox-group">
             <label class="checkbox" role="button" tabindex="0">
               React
-              <input value="react" name="framework" type="checkbox" tabindex="-1" checked>
+              <input value="react" name="framework" type="checkbox" tabindex="-1">
               <span class="checkmark"></span>
             </label>
 
@@ -85,9 +97,9 @@
         </fieldset>
 
         <footer class="footer">
-          <p class="feedback">Formulário enviado com sucesso!</p>
-
+          <!-- <p class="feedback">Formulário enviado com sucesso!</p> -->
           <!-- <button type="submit" disabled>Enviar</button> -->
+
           <button type="submit">Enviar</button>
         </footer>
       </form>

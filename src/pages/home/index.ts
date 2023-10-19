@@ -5,7 +5,7 @@ import '../../components/counter';
 import { StyckersForm, PayloadType } from './home.types';
 
 const formSchema = z.object({
-  framework: z.array(z.string()),
+  framework: z.array(z.string()).nonempty('Selecione algum sticker!'),
   quantity: z
     .number({
       required_error: 'Campo obrigatório!',
@@ -23,6 +23,16 @@ function setFocus(fieldName: string | number) {
   input.focus();
 }
 
+function handleSuccessSubmit(form: StyckersForm) {
+  const overlay = document.querySelector('#loader-overlay')!;
+
+  overlay.classList.add('show');
+
+  // No mundo real, essa parte estaria dentro dos then/catch/finally uma request
+  setTimeout(() => form.reset(), 3000);
+  setTimeout(() => overlay.classList.remove('show'), 7000);
+}
+
 function handleSubmit(event: SubmitEvent) {
   event.preventDefault();
 
@@ -37,12 +47,12 @@ function handleSubmit(event: SubmitEvent) {
   };
 
   try {
-    const formData = formSchema.passthrough().parse(payload, {  });
+    // reseta todos os erros
+
+    const formData = formSchema.parse(payload);
     console.log(formData);
 
-    // spinner no botão por 2 segundos
-    // reseta formulário
-    // mensagem de enviado com sucesso por 4 segundos
+    handleSuccessSubmit(form);
   }
   catch (error) {
     if (error instanceof z.ZodError) {

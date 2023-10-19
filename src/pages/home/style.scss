@@ -2,6 +2,7 @@
 @import url(../../components/textarea/styles.scss);
 
 #app {
+  position: relative;
   width: 100%;
   max-width: 560px;
   margin: 20px auto;
@@ -9,85 +10,161 @@
   border-radius: 8px;
   box-shadow: 10px 22px 34px 0 rgba(0, 0, 0, 0.5);
   overflow: hidden;
-}
 
-.header {
-  height: 187px;
-  width: 100%;
-  margin-bottom: 3.2rem;
-  padding: 2.3rem 3.1rem;
-  background: url(../../assets/images/header.png) center no-repeat;
-  background-size: cover;
+  .header {
+    height: 187px;
+    width: 100%;
+    margin-bottom: 3.2rem;
+    padding: 2.3rem 3.1rem;
+    background: url(../../assets/images/header.png) center no-repeat;
+    background-size: cover;
 
-  .title {
-    color: #fff;
-    font-size: 2.4rem;
-    line-height: 3.5rem;
-    font-weight: 300;
+    .title {
+      color: #fff;
+      font-size: 2.4rem;
+      line-height: 3.5rem;
+      font-weight: 300;
 
-    span {
-      font-weight: bold;
+      span {
+        font-weight: bold;
+      }
     }
   }
-}
 
-.form {
-  display: flex;
-  gap: 3.2rem;
-  flex-direction: column;
+  .form {
+    display: flex;
+    gap: 3.2rem;
+    flex-direction: column;
 
-  .fieldset {
-    padding: 0 3.2rem;
+    .fieldset {
+      padding: 0 3.2rem;
 
-    .legend {
+      .legend {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 32px;
+    background-color: var(--gray);
+
+    .feedback {
+      flex: 1;
+      color: var(--green);
       font-size: 1.8rem;
-      line-height: 2.1rem;
       font-weight: 600;
-      margin-bottom: 1.5rem;
+    }
+
+    button {
+      border: none;
+      border-radius: 0.8rem;
+      color: #fff;
+      background-color: var(--blue);
+      border: .2rem solid var(--blue);
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 0.6rem 3rem;
+      cursor: pointer;
+
+      &:disabled {
+        pointer-events: none;
+        color: var(--disabled-text);
+        background-color: var(--disabled);
+        border: .2rem solid var(--disabled-text);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--purple);
+      }
+
+      &:hover {
+        background-color: var(--blue-medium);
+      }
     }
   }
 }
 
-.footer {
+
+#loader-overlay {
+  z-index: 9999;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  padding: 32px;
-  background-color: var(--gray);
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 300;
+  text-align: center;
+  color: var(--green);
+  background-color: rgba(255, 255, 255, 0.95);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .4s;
 
-  .feedback {
-    flex: 1;
-    color: var(--green);
-    font-size: 1.8rem;
-    font-weight: 600;
+  .spinner, .message {
+    position: absolute;
+    opacity: 0;
   }
 
-  button {
-    border: none;
-    border-radius: 0.8rem;
-    color: #fff;
-    background-color: var(--blue);
-    border: .2rem solid var(--blue);
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 0.6rem 3rem;
-    cursor: pointer;
+  &.show {
+    opacity: 1;
+    pointer-events: all;
 
-    &:disabled {
-      pointer-events: none;
-      color: var(--disabled-text);
-      background-color: var(--disabled);
-      border: .2rem solid var(--disabled-text);
+    .spinner {
+      animation: fade-in-out 3s ease-in-out forwards;
     }
 
-    &:focus-visible {
-      outline: 2px solid var(--purple);
-    }
-
-    &:hover {
-      background-color: var(--blue-medium);
+    .message {
+      opacity: 1;
+      transition: opacity .4s 3s;
     }
   }
 
+  .loader {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+
+    &:before , &:after{
+      content: '';
+      border-radius: 50%;
+      position: absolute;
+      inset: 0;
+      box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3) inset;
+    }
+    &:after {
+      box-shadow: 0 2px 0 var(--green) inset;
+      animation: rotate 2s linear infinite;
+    }
+
+    @keyframes rotate {
+      0% {  transform: rotate(0)}
+      100% { transform: rotate(360deg)}
+    }
+  }
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
