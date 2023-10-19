@@ -8,7 +8,15 @@
     background-color: transparent;
     cursor: pointer;
 
-    &:focus, &:focus-visible {
+    &[disabled] {
+      pointer-events: none;
+
+      svg path {
+        fill: var(--disabled);
+      }
+    }
+
+    &:focus-visible {
       outline: 2px solid var(--purple);
     }
 
@@ -44,7 +52,7 @@
       -moz-appearance: textfield;
     }
 
-    &:focus, &:focus-visible {
+    &:focus-visible {
       outline: 2px solid var(--purple);
     }
   }
