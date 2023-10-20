@@ -27,9 +27,9 @@ html {
   --blue: #2F3676;
   --blue-medium: #191847;
   --blue-dark: #071723;
-  --red: #F33232;
 
-  --error: #F59393;
+  --error: #F33232;
+  --error-light: #F59393;
   --disabled: #C5CFD6;
   --disabled-text: #555555;
 }

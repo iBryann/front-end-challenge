@@ -9,6 +9,11 @@ textarea {
   color: var(--blue-dark);
   background-color: var(--gray);
 
+  &[error] {
+    border: 1px solid var(--error);
+    background-color: var(--error-light);
+  }
+
   &::-webkit-scrollbar {
     width: 8px;
     cursor: pointer;

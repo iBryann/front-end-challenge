@@ -1,27 +1,12 @@
 import { z } from 'zod';
 
 import './style.scss';
-import '../../components/counter';
+import 'components/checkbox';
+import 'components/counter';
+import 'components/textarea';
+import { formSchema } from 'schemas';
+import { setFocus, setError, resetErrors } from 'utils';
 import { StyckersForm, PayloadType } from './home.types';
-
-const formSchema = z.object({
-  framework: z.array(z.string()).nonempty('Selecione algum sticker!'),
-  quantity: z
-    .number({
-      required_error: 'Campo obrigatório!',
-      invalid_type_error: 'Informe uma quantidade válida!',
-    })
-    .positive('Informe um valor maior que zero!'),
-  description: z
-    .string()
-    .nonempty('Campo obrigatório!'),
-});
-
-function setFocus(fieldName: string | number) {
-  type queryType = HTMLInputElement | HTMLSelectElement;
-  const input = document.querySelector<queryType>(`[name="${fieldName}"]`)!;
-  input.focus();
-}
 
 function handleSuccessSubmit(form: StyckersForm) {
   const overlay = document.querySelector('#loader-overlay')!;
@@ -45,12 +30,11 @@ function handleSubmit(event: SubmitEvent) {
   };
 
   try {
-    // reseta todos os erros
-
     const formData = formSchema.parse(payload);
 
     // No mundo real, essa parte estaria dentro dos then/catch/finally de uma request
     console.log(formData);
+    resetErrors(form);
     handleSuccessSubmit(form);
   }
   catch (error) {
@@ -58,9 +42,7 @@ function handleSubmit(event: SubmitEvent) {
       setFocus(error.errors[0].path[0]);
 
       error.errors.forEach(err => {
-        console.log(String(err.path[0]), err);
-
-        // coloca o campo em estado de erro
+        setError(String(err.path[0]));
       });
     }
   }
