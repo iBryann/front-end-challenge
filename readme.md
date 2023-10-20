@@ -17,7 +17,7 @@ Como vi que o projeto padrão usava vanilla JS, curti muito a ideia de deixar o 
 4. Configurei o TypeScript no projeto. Achei que ficaria muito chique um vanila TS;
 5. Na validação do formulário decidi usar o Zod pela facilidade e flexibilidade;
 6. Na estilização decidi usar SASS, por ser mais moderno e menos verboso;
-7. Tenho vídeo por fazer listas.
+7. Tenho vício por fazer listas.
 
 ## ⚡ Stack utilizada
 
