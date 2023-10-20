@@ -4,6 +4,9 @@ Olá, prazer em conhecê-los e foi muito divertido fazer esse desafio! Não fina
 
 Deem uma olhada na [aplicação aqui](https://bryann-challenge.netlify.app/)!
 
+## Como rodar o projeto
+Basta clonar na sua máquina, dar um **_pnpm install_** e em seguida um **_pnpm dev_**.
+
 ## Decisões arquiteturais do projeto
 
 Como vi que o projeto padrão usava vanilla JS, curti muito a ideia de deixar o ReactJS de lado e fazer com vanilla também, só que do meu jeito.
